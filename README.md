@@ -140,5 +140,6 @@ foram mostradas 4 estacoes
 
 ```
 
+Todo o codigo é um enorme draft, foi criado apenas para testar o hook de checar uma bike disponível em loop de tempo, e tem muito espaço para melhorias. Quem achar divertido, brinca um pouco e faz um pull request ;D
 
 ### be happy
