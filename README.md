@@ -5,13 +5,13 @@ Trata-se de um extrator de dados do do bicicletar, atraves dos scripts em seu si
 fornecendo esta informação tanto diretamente no terminal, quanto como uma API,
 retornando um **GeoJSON** (especificação e documentação do GeoJSON:
 http://geojson.org/geojson-spec.html) do status em tempo real das estações. Um exemplo
-do **GeoJSON** gerado pode ser visto no arquivo  bicicletar.geojson.
+do **GeoJSON** gerado pode ser visto no arquivo [estacoes.geojson](estacoes.geojson).
 As informações são tratadas de forma a propiciar tanto uma visão completa de todas as
 estações quanto apenas informações resultantes de uma busca de estações por local.
 
-A ideia ao desenvolver isto foi propiciar a criação de hooks que chequem os dados
-regularmente e informem quando houver uma bike disponivel em uma estacao especifica
-bem como procurar estações em uma região especifica, para depositar a bike,
+A ideia, ao desenvolver isto, foi propiciar a criação de hooks que chequem os dados
+regularmente e informem quando houver uma bike disponivel em uma estacao especifica,
+bem como procurar estações em uma região especifica para depositar a bike,
 planejando o deslocamento de forma mais eficiente.
 
 ### Requisitos
@@ -45,7 +45,7 @@ onde **k** é a rua ou nome da estação que se procura.
 ```
 python cli.py [criterio de busca]
 ```
-onde o criteri ode busca, se informado, trará, apenas, as estações que se
+onde o criterio de busca, se informado, trará, apenas, as estações que se
 adequarem ao criterio definido
 
 
