@@ -14,6 +14,6 @@ def _busca(criterio):
     _bloco = []
     for _estacao in _estacoes:
         _nome, _lat, _long, _endereco, _linha, _statusOnline, _StatusOperacional, _disp1, _disp2, _total, _internalStatus, _img, _id = _estacao
-        if ((criterio.decode('utf-8') in _nome) or (criterio.decode('utf-8') in _endereco) or (criterio.decode('utf-8') in _linha)):
+        if ((criterio.decode('utf-8') in (_nome.lower() or _nome)) or (criterio.decode('utf-8') in (_endereco.lower() or _endereco)) or (criterio.decode('utf-8') in (_linha or _linha.lower()))):
             _bloco.append(_estacao)
     return _bloco
