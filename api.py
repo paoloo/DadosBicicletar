@@ -13,14 +13,15 @@ class srv:
         self._g = core
 
     def _rota(self):
-        self._a.route('/estacoes', callback=self.getStations)
+        self._a.route('/estacoes/', callback=self.getStations)
         self._a.route('/estacoes/<busca>', callback=self.getStations)
 
     def go(self):
         self._a.run(host=self._h, port=self._p)
 
     def getStations(self, busca=''):
-        print 
+        print
+        response.headers['Access-Control-Allow-Origin']='*'
         response.headers['Content-Type']='application/json'
         _estacoes = self._g._get() if busca == '' else self._g._busca(busca)
         _bloco = []
@@ -32,15 +33,15 @@ class srv:
                                 "type": "Point" },
                             "properties": {
                                 "id" : _id,
-                                "nome" : _nome.encode('ascii','xmlcharrefreplace'),
-                                "endereco" : _endereco.encode('ascii','xmlcharrefreplace'),
-                                "estacao" : _linha.encode('ascii','xmlcharrefreplace'),
-                                "status_online": _statusOnline.encode('ascii','xmlcharrefreplace'),
-                                "status_operacional" : _StatusOperacional.encode('ascii','xmlcharrefreplace'),
-                                "qtd_bikes_disp_1" : _disp1.encode('ascii','xmlcharrefreplace'),
-                                "qtd_bikes_disp_2" : _disp2.encode('ascii','xmlcharrefreplace'),
-                                "qtd_vagas_total" : _total.encode('ascii','xmlcharrefreplace'),
-                                "statusInterno" : _internalStatus.encode('ascii','xmlcharrefreplace') }
+                                "name" : _nome,
+                                "address" : _endereco,
+                                "station" : _linha,
+                                "onlineStatus": _statusOnline,
+                                "operationaStatus" : _StatusOperacional,
+                                "bikesAvailable" : _disp1,
+                                "bikesAvailable2" : _disp2,
+                                "totalVacancies" : _total,
+                                "internalStatus" : _internalStatus }
                          })
         return json.dumps({ "features" : _bloco, "type": "FeatureCollection" })
 
