@@ -24,7 +24,7 @@ def _get():
     return _estacoes
 
 def _busca(criterio):
-    _criterio = criterio.decode('utf-8')
+    _criterio = criterio.lower().decode('UTF-8')
     _estacoes = _get()
     _bloco = []
     for _estacao in _estacoes:
