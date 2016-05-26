@@ -21,6 +21,7 @@ class srv:
 
     def getStations(self, busca=''):
         print
+        response.headers['Access-Control-Allow-Origin']='*'
         response.headers['Content-Type']='application/json'
         _estacoes = self._g._get() if busca == '' else self._g._busca(busca)
         _bloco = []
