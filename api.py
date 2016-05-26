@@ -33,15 +33,15 @@ class srv:
                                 "type": "Point" },
                             "properties": {
                                 "id" : _id,
-                                "nome" : _nome.encode('ascii','xmlcharrefreplace'),
-                                "endereco" : _endereco.encode('ascii','xmlcharrefreplace'),
-                                "estacao" : _linha.encode('ascii','xmlcharrefreplace'),
-                                "status_online": _statusOnline.encode('ascii','xmlcharrefreplace'),
-                                "status_operacional" : _StatusOperacional.encode('ascii','xmlcharrefreplace'),
-                                "qtd_bikes_disp_1" : _disp1.encode('ascii','xmlcharrefreplace'),
-                                "qtd_bikes_disp_2" : _disp2.encode('ascii','xmlcharrefreplace'),
-                                "qtd_vagas_total" : _total.encode('ascii','xmlcharrefreplace'),
-                                "statusInterno" : _internalStatus.encode('ascii','xmlcharrefreplace') }
+                                "nome" : _nome,
+                                "endereco" : _endereco,
+                                "estacao" : _linha,
+                                "status_online": _statusOnline,
+                                "status_operacional" : _StatusOperacional,
+                                "qtd_bikes_disp_1" : _disp1,
+                                "qtd_bikes_disp_2" : _disp2,
+                                "qtd_vagas_total" : _total,
+                                "statusInterno" : _internalStatus }
                          })
         return json.dumps({ "features" : _bloco, "type": "FeatureCollection" }, indent=2, sort_keys=True)
 
