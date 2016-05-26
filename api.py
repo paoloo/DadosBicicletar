@@ -13,14 +13,15 @@ class srv:
         self._g = core
 
     def _rota(self):
-        self._a.route('/estacoes', callback=self.getStations)
+        self._a.route('/estacoes/', callback=self.getStations)
         self._a.route('/estacoes/<busca>', callback=self.getStations)
 
     def go(self):
         self._a.run(host=self._h, port=self._p)
 
     def getStations(self, busca=''):
-        print 
+        print
+        response.headers['Access-Control-Allow-Origin']='*'
         response.headers['Content-Type']='application/json'
         _estacoes = self._g._get() if busca == '' else self._g._busca(busca)
         _bloco = []
@@ -42,7 +43,7 @@ class srv:
                                 "qtd_vagas_total" : _total.encode('ascii','xmlcharrefreplace'),
                                 "statusInterno" : _internalStatus.encode('ascii','xmlcharrefreplace') }
                          })
-        return json.dumps({ "features" : _bloco, "type": "FeatureCollection" })
+        return json.dumps({ "features" : _bloco, "type": "FeatureCollection" }, indent=2, sort_keys=True)
 
 if __name__=='__main__':
     s=srv().go()
