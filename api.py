@@ -43,7 +43,7 @@ class srv:
                                 "qtd_vagas_total" : _total.encode('ascii','xmlcharrefreplace'),
                                 "statusInterno" : _internalStatus.encode('ascii','xmlcharrefreplace') }
                          })
-        return json.dumps({ "features" : _bloco, "type": "FeatureCollection" })
+        return json.dumps({ "features" : _bloco, "type": "FeatureCollection" }, indent=2, sort_keys=True)
 
 if __name__=='__main__':
     s=srv().go()
