@@ -13,14 +13,14 @@ class srv:
         self._g = core
 
     def _rota(self):
-        self._a.route('/estacoes', callback=self.getStations)
+        self._a.route('/estacoes/', callback=self.getStations)
         self._a.route('/estacoes/<busca>', callback=self.getStations)
 
     def go(self):
         self._a.run(host=self._h, port=self._p)
 
     def getStations(self, busca=''):
-        print 
+        print
         response.headers['Content-Type']='application/json'
         _estacoes = self._g._get() if busca == '' else self._g._busca(busca)
         _bloco = []
