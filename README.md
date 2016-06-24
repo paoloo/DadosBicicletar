@@ -1,7 +1,7 @@
 # DadosBicicletar
-### Status das estações do projeto bicicletar, de Fortaleza/BR, como API e aplicacao
+### Status das estações do projeto bicicletar, de Fortaleza/BR, como API e aplicação
 
-Trata-se de um extrator de dados do do bicicletar, atraves dos scripts em seu site,
+Trata-se de um extrator de dados do do bicicletar, através dos scripts em seu site,
 fornecendo esta informação tanto diretamente no terminal, quanto como uma API,
 retornando um **GeoJSON** (especificação e documentação do GeoJSON:
 http://geojson.org/geojson-spec.html) do status em tempo real das estações. Um exemplo
@@ -10,13 +10,13 @@ As informações são tratadas de forma a propiciar tanto uma visão completa de
 estações quanto apenas informações resultantes de uma busca de estações por local.
 
 A ideia, ao desenvolver isto, foi propiciar a criação de hooks que chequem os dados
-regularmente e informem quando houver uma bike disponivel em uma estacao especifica,
-bem como procurar estações em uma região especifica para depositar a bike,
+regularmente e informem quando houver uma bike disponível em uma estação especifíca,
+bem como procurar estações em uma região específica para depositar a bike,
 planejando o deslocamento de forma mais eficiente.
 
 ### Requisitos
 - python 2.7
-- bottle ( bottlepy.org - mas ja vai embarcado)
+- bottle ( bottlepy.org - mas já vai embarcado)
 - selenium
 - PhantomJS
 
@@ -45,11 +45,11 @@ onde **k** é a rua ou nome da estação que se procura.
 ```
 python cli.py [criterio de busca]
 ```
-onde o criterio de busca, se informado, trará, apenas, as estações que se
-adequarem ao criterio definido
+onde o critério de busca, se informado, trará, apenas, as estações que se
+adequarem ao critério definido
 
 
-### Exemplo da saida da API da busca por "Bezerra" com a URL: http://localhost:8080/estacoes/Bezerra
+### Exemplo da saída da API da busca por "Bezerra" com a URL: http://localhost:8080/estacoes/Bezerra
 ```
 {
 	"type": "FeatureCollection",
@@ -128,7 +128,7 @@ adequarem ao criterio definido
 	}]
 }
 ```
-### Exemplo da saida do terminal com a busca por estacoes na "Bezerra"
+### Exemplo da saída do terminal com a busca por estações na "Bezerra"
 ```
 paolo@abyss:~/Sources/DadosBicicletar$ python cli.py Bezerra
 PROJETO BICICLETAR - FORTALEZA/BR
@@ -140,6 +140,6 @@ foram mostradas 4 estacoes
 
 ```
 
-Todo o codigo é um enorme draft, foi criado apenas para testar o hook de checar uma bike disponível em loop de tempo, e tem muito espaço para melhorias. Quem achar divertido, brinca um pouco e faz um pull request ;D
+Todo o código é um enorme draft, foi criado apenas para testar o hook de checar uma bike disponível em loop de tempo, e tem muito espaço para melhorias. Quem achar divertido, brinca um pouco e faz um pull request ;D
 
 ### be happy
