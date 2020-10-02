@@ -15,10 +15,8 @@ bem como procurar estações em uma região específica para depositar a bike,
 planejando o deslocamento de forma mais eficiente.
 
 ### Requisitos
-- python 2.7
+- python 3.0+
 - bottle ( bottlepy.org - mas já vai embarcado)
-- selenium
-- PhantomJS
 
 ### Uso - modo API
 
@@ -32,14 +30,14 @@ nohup python web.py &
 ```
 
 #### Requisição
+
+As requisições devem ser feitas através do endpoint `http://localhost:8080/estacoes/`.
+
+para buscar estações que tenham certo critério, 
 ```
-http://localhost:8080/estacoes
+curl http://localhost:8080/estacoes/<k>
 ```
-para buscar estações que tenham certo critério
-```
-http://localhost:8080/estacoes/k
-```
-onde **k** é a rua ou nome da estação que se procura.
+onde **<k>** é a rua ou nome da estação que se procura.
 
 ### Uso - modo terminal
 ```
