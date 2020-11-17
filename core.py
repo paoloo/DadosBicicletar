@@ -20,7 +20,7 @@ def _limpa(texto):
 def _get():
     dados = requests.get("http://www.bicicletar.com.br/mapaestacao.aspx")
     conteudo = dados.text
-    estacoes = re.search("beaches = (.*)\>", conteudo).group()[10:][:-6].replace("'",'"')
+    estacoes = re.search("beaches = (.*)\>", conteudo).group()[10:][:-6].replace('"','').replace("'",'"')
     estacoes = estacoes[:-2] + estacoes[-1:]
     _estacoes = json.loads(estacoes)
     return _estacoes
