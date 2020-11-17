@@ -32,6 +32,11 @@ def _busca(criterio):
     _bloco = []
     for _estacao in _estacoes:
         _nome, _lat, _long, _endereco, _linha, _statusOnline, _StatusOperacional, _disp1, _disp2, _total, _internalStatus, _img, _id = _estacao
-        if ((_criterio in _limpa(_nome)) or (_criterio in _limpa(_endereco)) or (_criterio in _limpa(_linha))):
-            _bloco.append(_estacao)
+        try:
+            float(_criterio)
+            if ((int(_criterio) == int(_id))):
+               _bloco.append(_estacao)
+        except ValueError: 
+           if ((_criterio in _limpa(_nome)) or (_criterio in _limpa(_endereco)) or (_criterio in _limpa(_linha))):
+              _bloco.append(_estacao)
     return _bloco
