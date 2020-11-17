@@ -3,11 +3,18 @@
 from bottle import Bottle, response
 import core
 import json
+import os
 
 class srv:
     def __init__(self, host='', porta=8080):
-        self._h = host
-        self._p = porta
+
+        if os.environ.get('APP_LOCATION') == 'heroku':
+           self._h = "0.0.0.0"
+           self._p = int(os.environ.get("PORT", 5000))
+        else:
+           self._h = host
+           self._p = porta
+
         self._a = Bottle()
         self._rota()
         self._g = core
